@@ -1,0 +1,5 @@
+path: D:/proyectos/fine-tuning/dataset
+train: images/train
+val: images/val
+nc: 3
+names: ['robot_team_a', 'robot_team_b', 'ball']

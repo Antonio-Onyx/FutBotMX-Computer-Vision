@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Local tool/app state
+.agents/
+Ultralytics/
+
+# Datasets and generated training outputs
+dataset/images/
+dataset/labels/
+dataset/.gitkeep
+runs/
+weights/
+
+# Model weights and exports
+*.pt
+*.onnx
+*.engine
+*.torchscript
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
