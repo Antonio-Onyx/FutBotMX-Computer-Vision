@@ -8,27 +8,22 @@ venv/
 
 # Local tool/app state
 .agents/
-Ultralytics/
+/Ultralytics/
+finetuning/Ultralytics/
 
 # Generated training outputs
-dataset/.gitkeep
-dataset/images/.gitkeep
-dataset/labels/.gitkeep
-dataset/labels/*.cache
-runs/*
-!runs/
-!runs/train/
-runs/train/*
-!runs/train/robot_soccer_v1/
-runs/train/robot_soccer_v1/*
-!runs/train/robot_soccer_v1/weights/
-weights/
-runs/train/robot_soccer_v1/weights/*
-!runs/train/robot_soccer_v1/weights/best.pt
+/dataset/
+finetuning/dataset/.gitkeep
+finetuning/dataset/images/.gitkeep
+finetuning/dataset/labels/.gitkeep
+finetuning/dataset/labels/*.cache
+/runs/
+finetuning/runs/
+/weights/
 
 # Model weights and exports
 *.pt
-!runs/train/robot_soccer_v1/weights/best.pt
+!finetuning/models/YOLOv8n_robots.pt
 *.onnx
 *.engine
 *.torchscript

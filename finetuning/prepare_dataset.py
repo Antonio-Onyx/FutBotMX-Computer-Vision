@@ -10,7 +10,8 @@ print(torch.cuda.get_device_name(0))
 
 
 CLASS_NAMES = ["robot_team_a", "robot_team_b", "ball"]
-DATASET_DIR = Path("dataset")
+BASE_DIR = Path(__file__).resolve().parent
+DATASET_DIR = BASE_DIR / "dataset"
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
 RANDOM_SEED = 42
 TRAIN_RATIO = 0.8

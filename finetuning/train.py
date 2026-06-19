@@ -3,22 +3,24 @@ from pathlib import Path
 
 import torch
 
-os.environ.setdefault("YOLO_CONFIG_DIR", str(Path("Ultralytics").resolve()))
+BASE_DIR = Path(__file__).resolve().parent
+os.environ.setdefault("YOLO_CONFIG_DIR", str(BASE_DIR / "Ultralytics"))
 
 from ultralytics import YOLO
 
 assert torch.cuda.is_available(), "CUDA no disponible"
 print(torch.cuda.get_device_name(0))
 
-DATA_YAML = "dataset/data.yaml"
-TRAIN_PROJECT = str(Path("runs/train").resolve())
+DATA_YAML = BASE_DIR / "dataset" / "data.yaml"
+BASE_MODEL = BASE_DIR / "yolov8n.pt"
+TRAIN_PROJECT = BASE_DIR / "runs" / "train"
 
 
 def main():
-    model = YOLO("yolov8n.pt")
+    model = YOLO(str(BASE_MODEL if BASE_MODEL.exists() else "yolov8n.pt"))
 
     model.train(
-        data=DATA_YAML,
+        data=str(DATA_YAML),
         epochs=150,
         imgsz=640,
         batch=16,
@@ -37,7 +39,7 @@ def main():
         translate=0.1,
         scale=0.3,
         device=0,
-        project=TRAIN_PROJECT,
+        project=str(TRAIN_PROJECT),
         name="robot_soccer_v1",
         exist_ok=True,
         patience=30,

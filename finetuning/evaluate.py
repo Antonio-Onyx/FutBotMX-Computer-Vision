@@ -3,15 +3,16 @@ from pathlib import Path
 
 import torch
 
-os.environ.setdefault("YOLO_CONFIG_DIR", str(Path("Ultralytics").resolve()))
+BASE_DIR = Path(__file__).resolve().parent
+os.environ.setdefault("YOLO_CONFIG_DIR", str(BASE_DIR / "Ultralytics"))
 
 from ultralytics import YOLO
 
 assert torch.cuda.is_available(), "CUDA no disponible"
 print(torch.cuda.get_device_name(0))
 
-DATA_YAML = "dataset/data.yaml"
-MODEL_PATH = "runs/train/robot_soccer_v1/weights/best.pt"
+DATA_YAML = BASE_DIR / "dataset" / "data.yaml"
+MODEL_PATH = BASE_DIR / "models" / "YOLOv8n_robots.pt"
 CLASS_NAMES = ["robot_team_a", "robot_team_b", "ball"]
 
 
@@ -38,8 +39,8 @@ def class_metrics(metrics, class_index):
 
 
 def main():
-    model = YOLO(MODEL_PATH)
-    metrics = model.val(data=DATA_YAML, split="val")
+    model = YOLO(str(MODEL_PATH))
+    metrics = model.val(data=str(DATA_YAML), split="val")
 
     print("\nMétricas por clase:")
     for class_index, class_name in enumerate(CLASS_NAMES):
