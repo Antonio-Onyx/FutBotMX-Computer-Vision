@@ -1,0 +1,12 @@
+[project]
+name = "futbotmx-vision-challenge"
+version = "0.1.0"
+description = "Computer vision pipeline for FutBotMX robot soccer analysis."
+requires-python = ">=3.10"
+dependencies = [
+    "ultralytics",
+    "opencv-python",
+    "numpy",
+    "matplotlib",
+    "pyyaml",
+]
