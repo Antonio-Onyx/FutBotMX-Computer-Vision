@@ -10,10 +10,11 @@ venv/
 .agents/
 Ultralytics/
 
-# Datasets and generated training outputs
-dataset/images/
-dataset/labels/
+# Generated training outputs
 dataset/.gitkeep
+dataset/images/.gitkeep
+dataset/labels/.gitkeep
+dataset/labels/*.cache
 runs/
 weights/
 
