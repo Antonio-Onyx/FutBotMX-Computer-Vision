@@ -15,11 +15,20 @@ dataset/.gitkeep
 dataset/images/.gitkeep
 dataset/labels/.gitkeep
 dataset/labels/*.cache
-runs/
+runs/*
+!runs/
+!runs/train/
+runs/train/*
+!runs/train/robot_soccer_v1/
+runs/train/robot_soccer_v1/*
+!runs/train/robot_soccer_v1/weights/
 weights/
+runs/train/robot_soccer_v1/weights/*
+!runs/train/robot_soccer_v1/weights/best.pt
 
 # Model weights and exports
 *.pt
+!runs/train/robot_soccer_v1/weights/best.pt
 *.onnx
 *.engine
 *.torchscript
