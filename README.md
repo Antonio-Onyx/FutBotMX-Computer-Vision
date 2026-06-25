@@ -103,19 +103,8 @@ El uso de SAM 3 está sujeto a los términos y condiciones de la licencia oficia
 
 ## Créditos
 
-### Equipo
-
 **Gerardo Macías**
 
 * Diseño e implementación del pipeline de visión por computadora.
 * Preparación y etiquetado del conjunto de datos.
 * Fine-tuning del detector YOLOv8n.
-
-**[Nombre del integrante 2]**
-
-
-**[Nombre del integrante 3]**
-
-
-
-**[Nombre del integrante 4]**
